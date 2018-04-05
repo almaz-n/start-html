@@ -1,0 +1,28 @@
+@mixin roboto($weight) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: $weight;
+}
+
+@mixin zmdi($content,$font-size,$color) {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Material-Design-Iconic-Font';
+  font-size: $font-size;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color;
+  line-height: 1;
+  font-style: normal;
+
+  &:before {
+    content: $content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }
+}

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/roboto_regular/roboto.woff2") format("woff2"),
+    url("../fonts/roboto_regular/roboto.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/roboto_bold/roboto-700.woff2") format("woff2"),
+    url("../fonts/roboto_bold/roboto-700.woff") format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto_black/roboto-900.woff2") format("woff2"),
+  url("../fonts/roboto_black/roboto-900.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url('../fonts/material_design/Material-Design-Iconic-Font.woff2?v=2.2.0') format('woff2'),
+  url('../fonts/material_design/Material-Design-Iconic-Font.woff?v=2.2.0') format('woff'),
+  url('../fonts/material_design/Material-Design-Iconic-Font.ttf?v=2.2.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

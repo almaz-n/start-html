@@ -1,0 +1,142 @@
+// base settings
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    transition: all 400ms;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.42;
+  font-size: 16px;
+  transition: all 400ms;
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.container {
+    position: relative;
+    min-width: 300px;
+    width: 1280px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+button, input {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+}
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1);}
+  90% { transform: translate(-50%, -50%) rotate(1080deg) scale(1); }
+  100% { transform: scale(0); }
+}
+
+.btn {
+  padding: 15px 25px;
+  @include roboto(400);
+  box-shadow: 0 12px 17px 4px rgba(112, 78, 29, 0.33);
+  border-radius: 27px;
+  background-color: #febf00;
+  color: #3e330c;
+  font-size: 18px;
+  border: none;
+  letter-spacing: 0.09px;
+  cursor: pointer;
+  transition: all 700ms;
+
+  &.animate{
+    width: 50px;
+    height: 50px;
+    min-width: 0;
+    border-radius: 50%;
+    color: transparent;
+    padding: 0;
+
+    &:after{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      border-left-color: transparent;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin ease-in 2.5s forwards;
+      animation-name: spin;
+      transition-timing-function:ease-in-out;
+      animation-duration: 2.5s;
+      animation-fill-mode: forwards;
+    }
+
+    &.success:before{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 5px;
+      border: 4px solid #fff;
+      border-right: 0;
+      border-top: 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      animation: success ease-in 0.15s forwards;
+      animation-delay: 2.5s;
+    }
+
+    &.error{
+      position: relative;
+      animation: vibrate ease-in 0.5s forwards;
+      animation-delay: 2.5s;
+
+      &:before{
+        color: #fff;
+        position: absolute;
+        content: '!';
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        animation: error ease-in 0.5s forwards;
+        animation-delay: 2.5s;
+      }
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  border: none;
+  background-color: #fff;
+}
